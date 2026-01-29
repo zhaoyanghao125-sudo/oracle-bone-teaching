@@ -1,8 +1,10 @@
 # HUST-OBC 甲骨文数据集（教学精简版）
 
-本仓库包含用于AI识别甲骨文教学演示的精简数据集。
+本仓库包含用于AI识别甲骨文教学演示的精简数据集和预训练模型。
 
-## 数据说明
+## 资源说明
+
+### 数据集
 
 | 项目 | 数值 |
 |------|------|
@@ -11,9 +13,18 @@
 | 每类图片 | 约8张 |
 | 文件大小 | 5.4 MB |
 
+### 预训练模型
+
+| 项目 | 说明 |
+|------|------|
+| 模型 | ResNet50 |
+| 文件 | max_val_acc.pth |
+| 大小 | 204.53 MB |
+| 准确率 | 94.6% |
+
 ## 数据来源
 
-本数据集精选自 **HUST-OBC**（华中科技大学甲骨文字符数据集），仅用于教学演示目的。
+本数据集和模型来自 **HUST-OBC**（华中科技大学甲骨文字符数据集），仅用于教学演示目的。
 
 原始数据集信息：
 - 论文：Wang P, et al. An open dataset for oracle bone script recognition and decipherment. *Scientific Data*, 2024.
@@ -33,12 +44,21 @@ HUST-OBC-Mini/
     └── chinese_to_ID.json    # 现代汉字 -> ID 映射
 ```
 
+## 下载链接
+
+- 数据集：[HUST-OBC-Mini.zip](https://github.com/zhaoyanghao125-sudo/oracle-bone-teaching/releases/download/MINI/HUST-OBC-Mini.zip)
+- 模型：[max_val_acc.pth](https://github.com/zhaoyanghao125-sudo/oracle-bone-teaching/releases/download/model/max_val_acc.pth)
+
 ## 使用方法
 
 ### 在Google Colab中下载
 ```python
-!wget https://github.com/你的用户名/仓库名/raw/main/HUST-OBC-Mini.zip
+# 下载数据集
+!wget https://github.com/zhaoyanghao125-sudo/oracle-bone-teaching/releases/download/MINI/HUST-OBC-Mini.zip
 !unzip -q HUST-OBC-Mini.zip -d /content/oracle_bone/data/
+
+# 下载模型
+!wget https://github.com/zhaoyanghao125-sudo/oracle-bone-teaching/releases/download/model/max_val_acc.pth -P /content/oracle_bone/models/
 ```
 
 ### 加载标签映射
@@ -98,4 +118,4 @@ img.show()
 
 ## 许可协议
 
-本精简版数据集仅供教学使用。原始数据集版权归华中科技大学VLRLab所有。
+本精简版数据集和模型仅供教学使用。原始数据集和模型版权归华中科技大学VLRLab所有。
